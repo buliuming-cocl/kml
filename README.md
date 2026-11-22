@@ -10,13 +10,16 @@ scripts. No ISO has been built yet.
 
 ```text
 branding/wallpapers/        KINMIN wallpapers
+branding/logos/             KINMIN full logo (with wordmark)
+branding/icons/             KINMIN icon (symbol only)
 branding/rpm/               kinmin-branding RPM spec
 config/backgrounds/         GNOME wallpaper collection XML
 config/dconf/               KINMIN dconf defaults
+config/fastfetch/           fastfetch config with KINMIN logo
 kickstart/kml.ks            main Kickstart file
 licenses/                   third-party license information
 output/                     generated RPMs, repository metadata and ISO output
-scripts/                    build helpers
+scripts/                    build helpers and logo replacement script
 ```
 
 ## Branding delivery model
@@ -30,7 +33,16 @@ The package installs:
 - `/usr/share/backgrounds/kinmin/`
 - `/usr/share/gnome-background-properties/kinmin-wallpapers.xml`
 - `/etc/dconf/db/local.d/00-kinmin-background`
+- `/usr/share/kinmin/logos/kinmin-logo.png` (full logo with wordmark)
+- `/usr/share/kinmin/logos/kinmin-icon.png` (symbol-only icon)
+- `/usr/share/kinmin/fastfetch/config.jsonc` (fastfetch uses KINMIN icon)
+- `/usr/share/kinmin/scripts/replace-fedora-logos.sh`
 - `/usr/share/licenses/kinmin-branding/ASSET-ATTRIBUTION.md`
+
+The `replace-fedora-logos.sh` script runs in the RPM `%post` (and again from
+Kickstart) to overwrite all Fedora distribution logos system-wide:
+`/usr/share/pixmaps`, hicolor icon themes, Plymouth boot splash, Anaconda
+installer pixmaps, GNOME Shell, `/usr/lib/os-release` `LOGO=` and fastfetch.
 
 It intentionally does not replace `/etc/dconf/profile/user`. The Fedora `dconf`
 package already enables `system-db:local` in that profile. The RPM scriptlet

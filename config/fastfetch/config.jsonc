@@ -1,0 +1,25 @@
+{
+    // KINMIN Linux fastfetch logo
+    "logo": {
+        "type": "image",
+        "source": "/usr/share/kinmin/kinmin-icon.png",
+        "width": 35,
+        "height": 18
+    },
+    "modules": [
+        "os",
+        "host",
+        "kernel",
+        "uptime",
+        "shell",
+        "resolution",
+        "de",
+        "wm",
+        "terminal",
+        "cpu",
+        "gpu",
+        "memory",
+        "disk",
+        "locale"
+    ]
+}

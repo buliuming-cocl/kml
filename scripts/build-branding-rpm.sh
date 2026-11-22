@@ -12,15 +12,21 @@ REPO_DIR="${KML_REPO_DIR:-$OUTPUT_DIR/repo}"
 SPEC_TEMPLATE="$PROJECT_ROOT/branding/rpm/kinmin-branding.spec"
 
 WALLPAPER_DIR="$PROJECT_ROOT/branding/wallpapers"
+LOGO_DIR="$PROJECT_ROOT/branding/logos"
+ICON_DIR="$PROJECT_ROOT/branding/icons"
 
 required_files=(
     "$WALLPAPER_DIR/kinmin-default.png"
     "$WALLPAPER_DIR/marek-piwnicki-NrFhurv1N3I-unsplash.jpg"
     "$WALLPAPER_DIR/petra-reid-W5FKbMSL8D0-unsplash.jpg"
     "$WALLPAPER_DIR/queensland-australia--4DWT-txLSQ-unsplash.jpg"
+    "$LOGO_DIR/kinmin-logo.png"
+    "$ICON_DIR/kinmin-icon.png"
+    "$PROJECT_ROOT/config/fastfetch/config.jsonc"
     "$PROJECT_ROOT/config/backgrounds/kinmin-wallpapers.xml"
     "$PROJECT_ROOT/config/dconf/00-kinmin-background"
     "$PROJECT_ROOT/ASSET-ATTRIBUTION.md"
+    "$PROJECT_ROOT/scripts/replace-fedora-logos.sh"
     "$SPEC_TEMPLATE"
 )
 
@@ -60,6 +66,14 @@ install -m 0644 "$PROJECT_ROOT/config/dconf/00-kinmin-background" \
     "$RPMBUILD_DIR/SOURCES/00-kinmin-background"
 install -m 0644 "$PROJECT_ROOT/ASSET-ATTRIBUTION.md" \
     "$RPMBUILD_DIR/SOURCES/ASSET-ATTRIBUTION.md"
+install -m 0644 "$LOGO_DIR/kinmin-logo.png" \
+    "$RPMBUILD_DIR/SOURCES/kinmin-logo.png"
+install -m 0644 "$ICON_DIR/kinmin-icon.png" \
+    "$RPMBUILD_DIR/SOURCES/kinmin-icon.png"
+install -m 0644 "$PROJECT_ROOT/config/fastfetch/config.jsonc" \
+    "$RPMBUILD_DIR/SOURCES/config.jsonc"
+install -m 0755 "$PROJECT_ROOT/scripts/replace-fedora-logos.sh" \
+    "$RPMBUILD_DIR/SOURCES/replace-fedora-logos.sh"
 
 sed \
     -e "s/^Version:.*/Version:        ${RPM_VERSION}/" \

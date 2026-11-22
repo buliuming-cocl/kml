@@ -120,6 +120,12 @@ Architecture: x86_64
 Maintainer: KINMIN Studio
 RELEASE
 
+# Replace all Fedora logos with KINMIN branding (pixmaps, icons, Plymouth,
+# Anaconda, GDM, os-release, fastfetch).
+if [ -x /usr/share/kinmin/scripts/replace-fedora-logos.sh ]; then
+    /usr/share/kinmin/scripts/replace-fedora-logos.sh || :
+fi
+
 %end
 
 # ==================================================
