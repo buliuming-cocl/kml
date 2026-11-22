@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE wallpapers SYSTEM "gnome-wp-list.dtd">
+<wallpapers>
+  <wallpaper deleted="false">
+    <name>KINMIN Default</name>
+    <filename>/usr/share/backgrounds/kinmin/kinmin-default.png</filename>
+    <options>zoom</options>
+  </wallpaper>
+  <wallpaper deleted="false">
+    <name>Marek Piwnicki</name>
+    <filename>/usr/share/backgrounds/kinmin/marek-piwnicki-NrFhurv1N3I-unsplash.jpg</filename>
+    <options>zoom</options>
+  </wallpaper>
+  <wallpaper deleted="false">
+    <name>Petra Reid</name>
+    <filename>/usr/share/backgrounds/kinmin/petra-reid-W5FKbMSL8D0-unsplash.jpg</filename>
+    <options>zoom</options>
+  </wallpaper>
+  <wallpaper deleted="false">
+    <name>Queensland Australia</name>
+    <filename>/usr/share/backgrounds/kinmin/queensland-australia--4DWT-txLSQ-unsplash.jpg</filename>
+    <options>zoom</options>
+  </wallpaper>
+</wallpapers>

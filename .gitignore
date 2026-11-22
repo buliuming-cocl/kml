@@ -1,0 +1,15 @@
+# Build outputs and generated artifacts
+output/
+*.iso
+*.img
+*.rpm
+*.log
+*.pid
+
+# Editor and local tooling
+.vscode/
+__pycache__/
+*.pyc
+
+# Upstream reference checkout; not part of KML source
+kickstart/fedora-kickstarts/
